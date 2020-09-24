@@ -1,0 +1,13 @@
+dist
+logs
+public/*
+/.cache
+/.idea
+.idea
+/.idea_modules
+.DS_Store
+.env
+node_modules
+package-lock.json
+__coverage__/
+coverage/
