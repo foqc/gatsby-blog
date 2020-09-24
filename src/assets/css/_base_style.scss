@@ -1,0 +1,49 @@
+body {
+    @apply font-roboto bg-gray-900 text-white;
+}
+
+h1 {
+    @apply text-4xl;
+    font-weight: 900;
+}
+
+h2 {
+    @apply text-2xl;
+    font-weight: 700;
+}
+
+h3 {
+    @apply text-lg;
+    font-weight: 500;
+}
+
+@screen md {
+    h1 {
+        @apply text-6xl;
+    }
+    
+    h2 {
+        @apply text-4xl;
+    }
+    
+    h3 {
+        @apply text-2xl;
+    }
+}
+
+a {
+    color: #4299e1;
+
+    &:hover {
+        color: #f56565;
+    }
+}
+
+.canvas-mandelbrot {
+    @apply w-auto my-16 mx-auto block;
+
+    @screen md {
+        width: 800px;
+        height: 600px;
+    }
+}

@@ -1,4 +1,4 @@
-# FGatsby blog
+# Gatsby blog
 Gatsny blog is a personal blog made using gatsby
 
 ## Why Did I Build This?

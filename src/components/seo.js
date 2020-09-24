@@ -1,0 +1,108 @@
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
+
+function SEO({ description, lang, meta, title, imageUrl, loadDemoImage = false }) {
+  const { site, file, fileDemo } = useStaticQuery(
+    graphql`
+      query {
+        file: file(relativePath: { eq: "main.png" }) {
+          publicURL
+        }
+        fileDemo: file(relativePath: { eq: "mandelbrot.png" }) {
+          publicURL
+        }
+        site {
+          siteMetadata {
+            title
+            description
+            author
+            url
+          }
+        }
+      }
+    `
+  )
+
+  const metaDescription = description || site.siteMetadata.description
+  const metaTitle = title || site.siteMetadata.title
+  const image = imageUrl || `${site.siteMetadata.url}${loadDemoImage ? fileDemo.publicURL : file.publicURL}`
+
+  return (
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={metaTitle}
+      titleTemplate={`%s | foqc`}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:image`,
+          content: image,
+        },
+        {
+          property: `og:title`,
+          content: metaTitle,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: metaTitle,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+        {
+          name: `twitter:image`,
+          content: image,
+        },
+      ].concat(meta)}
+      link={[
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:400,700&display=swap",
+        },
+      ]}
+      script={[
+
+      ]}
+    />
+  )
+}
+
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+}
+
+SEO.propTypes = {
+  description: PropTypes.string,
+  lang: PropTypes.string,
+  meta: PropTypes.arrayOf(PropTypes.object),
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
+}
+
+export default SEO

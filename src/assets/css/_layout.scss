@@ -1,0 +1,32 @@
+.layout-grid {
+    @apply grid grid-cols-3 col-gap-0;
+    @screen md {
+      @apply grid-cols-12 col-gap-3;
+    }
+    
+    .col-half {
+      @apply col-span-12;
+
+      @screen md {
+        @apply col-span-6;
+      }
+    }
+    
+    .col-2-half {
+      @apply col-span-12;
+
+      @screen md {
+        @apply grid col-span-6 col-gap-3 grid-cols-2;
+      }
+    }
+  
+}
+
+.container {
+  padding: 1.5rem;
+  margin: auto;
+
+  @screen md {
+    padding: 0px;
+  }
+}
