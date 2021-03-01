@@ -1,9 +1,8 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from 'react'
+import { graphql } from 'gatsby'
 
 import Parser from 'html-react-parser'
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
 
 export const query = graphql`
   query BlogQuery($id: String!) {
