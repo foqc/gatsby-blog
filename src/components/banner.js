@@ -14,8 +14,8 @@ const Banner = ({ image }) => {
                 <p className="profile-description">
                     I am a passionate, enthusiastic and curious about the development and
                     innovation of technology, I am constantly learning and sharing my knowledge with others.
+                    I am also a driven individual with the ability to adapt to any situation and grow professionally together with others.
                     In this personal site you will find very interesting things that you will learn.
-                    So I hope you enjoy it.
                 </p>
                 <div className="profile-social">
                     <a href={LINKEDIN_LINK} target="_blank" rel="noreferrer">

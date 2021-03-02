@@ -1,9 +1,9 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import Nav from "./nav"
-import Seo from "./seo"
-import Footer from "./footer"
+import Nav from './nav'
+import Seo from './seo'
+import Footer from './footer'
 
 const Layout = ({ meta, children }) => {
   return (

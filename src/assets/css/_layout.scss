@@ -25,6 +25,8 @@
 .container {
   padding: 1.5rem;
   margin: auto;
+  z-index: 2;
+  position: relative;
 
   @screen md {
     padding: 0px;
